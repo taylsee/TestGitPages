@@ -38,13 +38,6 @@
                 <p class="price">0.05 TEST TON</p>
                 <button class="btn" onclick="buyItem(0.05, 'Concert T-Shirt')">Купить мерч</button>
             </div>
-            
-            <div class="item">
-                <h2>VIP Pass</h2>
-                <p>VIP зона + мерч</p>
-                <p class="price">0.2 TEST TON</p>
-                <button class="btn" onclick="buyItem(0.2, 'VIP Pass')">Купить VIP</button>
-            </div>
         </div>
 
         <!-- Страница оплаты -->
@@ -77,7 +70,7 @@
 
     <script>
         // ТЕСТОВЫЙ КОШЕЛЕК - замени на свой тестовый адрес!
-        const TON_WALLET = "kQCQ1tlyf5INJ0YqjZ1EUWQJ7pJ5J7O_97jzFbtP27pA_1j5"; // Пример тестового адреса
+        const TON_WALLET = "0QCxjxXxLJfZ4gmH-dTiOG2oN9rV_1UAzO0316vV292gtdq6";
         
         let currentProduct = { amount: 0, name: "" };
 
@@ -99,7 +92,7 @@
         }
 
         function openWallet() {
-            const tonAmount = currentProduct.amount * 1000000000; // в нанотонах
+            const tonAmount = currentProduct.amount * 1000000000;
             const walletLink = `https://t.me/wallet?startattach=wallet&params=${encodeURIComponent(JSON.stringify({
                 asset: 'TON',
                 amount: tonAmount,
@@ -113,7 +106,7 @@
             
             // Имитация проверки платежа
             setTimeout(() => {
-                const isPaid = Math.random() > 0.5; // 50% шанс "успешной оплаты"
+                const isPaid = Math.random() > 0.5;
                 if (isPaid) {
                     showStatus('✅ Платеж получен! Спасибо за покупку!', 'green');
                 } else {
@@ -133,10 +126,6 @@
             status.innerHTML = message;
             status.style.color = color;
         }
-        
-        // Инфо о тестовой сети
-        console.log('🔥 TESTNET MODE');
-        console.log('Получи тестовые TON: @testgiver_ton_bot');
     </script>
 </body>
 </html>
